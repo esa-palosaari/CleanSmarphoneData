@@ -12,7 +12,7 @@ including 'README.txt'. The original datasets include information about physical
 =============== What has been done in this repository =================
 
 This repository includes the following files:
-- 'run_analysis.R' which is code in R and produces the 'tidy.txt' file from the data in the folder 'UCI HAR Dataset'. The 'run_analysis.R' file merges the original training and test datasets, and adds variable names, identities of the subjects, and information about the activities to the dataset. The code includes only those original variables which had mean or standard deviation in their names in lower case letters. Finally, it computes the averages for those variables according to subject and activity and writes dataset to the file 'tidy.txt'.
+- 'run_analysis.R' which is code in R and produces the 'tidy.txt' file from the data in the folder 'UCI HAR Dataset'. The 'run_analysis.R' file merges the original training and test datasets, and adds variable names, identities of the subjects, and information about the activities to the dataset. The code includes only those original variables which had mean or standard deviation in their names in lower case letters. Finally, it computes the averages for those variables according to subject and activity and writes the dataset to the file 'tidy.txt'.
 - 'tidy.txt' contains averages for 30 subjects for each of the activities for means and standard deviations of the original variables. Both training and test data are included in the dataset in the file and they are not distinguished by any variable.
 - 'CodeBook.md' contains further information both about the original data and datasets and about the new dataset 'tidy.txt'
 
