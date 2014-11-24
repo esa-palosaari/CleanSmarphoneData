@@ -7,7 +7,7 @@ The repository is based on the following work:
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
 Folder 'UCI HAR Dataset' contains the original datasets and documentation,
-including 'README.txt'. The original datasets include information about the physical human activities and movements and related data from smartphone sensors.
+including 'README.txt'. The original datasets include information about physical human activities and movements and related data from smartphone sensors.
 
 =============== What has been done in this repository =================
 
