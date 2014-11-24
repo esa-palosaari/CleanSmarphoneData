@@ -65,7 +65,7 @@ c("WALKING", "WALKING_UPSTAIRS","WALKING_DOWNSTAIRS", "SITTING","STANDING","LAYI
 ## 5. From the data set in step 4, creates a second, independent tidy data set
 ##    with the average of each variable for each activity and each subject.
 
-## use average function for data.table to take means for the factors
+## use aggregate function for data.table to take means for the factors
 library("data.table")
 dataset_DT <- data.table(sdmeandata)
 average_DT <- aggregate(dataset_DT, by =list(dataset_DT$id, dataset_DT$activity), mean)
@@ -75,4 +75,6 @@ drops <- c("id","activity")
 average_DT <- average_DT[,!(names(average_DT) %in% drops)]
 setnames(average_DT, "Group.1", "id")
 setnames(average_DT, "Group.2", "activity")
+
+write.table(average_DT, file="tidy.txt", row.name=FALSE)
 

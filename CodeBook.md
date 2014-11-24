@@ -1,8 +1,11 @@
 Human Activity Recognition Using Smartphones Data Set
 
-The following text about the dataset is originally from website:
+The following text about the original dataset is originally from website:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+
 Smartphones#
+
+Please scroll down below "The complete list of variables of each feature vector" 
+to see the changes done in this Git repository.
 
 Source: Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L.
 Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass
@@ -118,12 +121,46 @@ These are used on the angle() variable:
 
 gravityMean tBodyAccMean tBodyAccJerkMean tBodyGyroMean tBodyGyroJerkMean
 
-======== Summary of information ==========
-N = 30
-age = 19–48
-six activities = (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, 	
-		  STANDING, LAYING) 
-Files: subject
+
+The original dataset included the following files:
+=========================================
+- 'README.txt'
+
+- 'features_info.txt': Shows information about the variables used on the feature vector.
+
+- 'features.txt': List of all features.
+
+- 'activity_labels.txt': Links the class labels with their activity name.
+
+- 'train/X_train.txt': Training set.
+- 'train/y_train.txt': Training labels.
+
+- 'test/X_test.txt': Test set.
+- 'test/y_test.txt': Test labels.
+
+The following files are available for the train and test data. Their descriptions are equivalent. 
+
+- 'train/subject_train.txt': 
+Each row identifies the subject who performed the 
+activity for each window sample. Its range is from 1 to 30. 
+
+- 'train/Inertial Signals/total_acc_x_train.txt': 
+The acceleration signal from the smartphone accelerometer X axis in standard gravity 
+units 'g'. Every row shows a 128 element vector. 
+
+The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' 
+files for the Y and Z axis. 
+
+- 'train/Inertial Signals/body_acc_x_train.txt': 
+The body acceleration signal obtained by 
+subtracting the gravity from the total acceleration. 
+
+- 'train/Inertial Signals/body_gyro_x_train.txt': 
+The angular velocity vector
+ measured by the gyroscope for each window sample. The units are radians/second. 
+
+- Features are normalized and bounded within [-1,1].
+- Each feature vector is a row on the text file.
 
 ======== The complete list of variables of each feature vector ========
 
@@ -688,3 +725,105 @@ Files: subject
 559 angle(X,gravityMean)
 560 angle(Y,gravityMean)
 561 angle(Z,gravityMean)
+
+
+=============== Changes in this repository =================
+This repository includes the following files:
+- 'README.md'
+- 'run_analysis.R' which is code in R and produces the 'tidy.txt' file from the data 
+in the folder 'UCI HAR Dataset'
+- 'tidy.txt' contains averages for each of the 30 subjects for each of the activities
+for means and standard deviations of the original variables. Both training and test data
+are included in the dataset in the file and they are not distinguished by any variable.
+- the id variable refers to the subject number and it is from the original file
+'subject_train.txt'
+- activity refers to the activity defined in the file 'activity_labels.txt'
+- the names of the other variables in 'tidy.txt' are otherwise the same 
+as those in file 'features.txt' but the '()' are replaced by .. and ()- by ...
+- the values of the variables are means for the row's subject and activity
+
+
+=========== The variables in 'tidy.txt' =================
+
+
+1 id
+2 activity
+3 tBodyAcc-mean...X
+4 tBodyAcc-mean...Y
+5 tBodyAcc-mean...Z
+6 tGravityAcc-mean...X
+7 tGravityAcc-mean...Y
+8 tGravityAcc-mean...Z
+9 tBodyAccJerk.mean...X
+10 tBodyAccJerk.mean...Y
+11 tBodyAccJerk.mean...Z
+12 tBodyGyro.mean...X
+13 tBodyGyro.mean...Y
+14 tBodyGyro.mean...Z
+15 tBodyGyroJerk.mean...X
+16 tBodyGyroJerk.mean...Y
+17 tBodyGyroJerk.mean...Z
+18 tBodyAccMag.mean..
+19 tGravityAccMag.mean..
+20 tBodyAccJerkMag.mean..
+21 tBodyGyroMag.mean..
+22 tBodyGyroJerkMag.mean..
+23 fBodyAcc.mean...X
+24 fBodyAcc.mean...Y
+25 fBodyAcc.mean...Z
+26 fBodyAcc.meanFreq...X
+27 fBodyAcc.meanFreq...Y
+28 fBodyAcc.meanFreq...Z
+29 fBodyAccJerk.mean...X
+30 fBodyAccJerk.mean...Y
+31 fBodyAccJerk.mean...Z
+32 fBodyAccJerk.meanFreq...X
+33 fBodyAccJerk.meanFreq...Y
+34 fBodyAccJerk.meanFreq...Z
+35 fBodyGyro.mean...X
+36 fBodyGyro.mean...Y
+37 fBodyGyro.mean...Z
+38 fBodyGyro.meanFreq...X
+39 fBodyGyro.meanFreq...Y
+40 fBodyGyro.meanFreq...Z
+41 fBodyAccMag.mean..
+42 fBodyAccMag.meanFreq..
+43 fBodyBodyAccJerkMag.mean..
+44 fBodyBodyAccJerkMag.meanFreq..
+45 fBodyBodyGyroMag.mean..
+46 fBodyBodyGyroMag.meanFreq..
+47 fBodyBodyGyroJerkMag.mean..
+48 fBodyBodyGyroJerkMag.meanFreq..
+49 tBodyAcc.std...X
+50 tBodyAcc.std...Y
+51 tBodyAcc.std...Z
+52 tGravityAcc.std...X
+53 tGravityAcc.std...Y
+54 tGravityAcc.std...Z
+55 tBodyAccJerk.std...X
+56 tBodyAccJerk.std...Y
+57 tBodyAccJerk.std...Z
+58 tBodyGyro.std...X
+59 tBodyGyro.std...Y
+60 tBodyGyro.std...Z
+61 tBodyGyroJerk.std...X
+62 tBodyGyroJerk.std...Y
+63 tBodyGyroJerk.std...Z
+64 tBodyAccMag.std..
+65 tGravityAccMag.std..
+66 tBodyAccJerkMag.std..
+67 tBodyGyroMag.std..
+68 tBodyGyroJerkMag.std..
+69 fBodyAcc.std...X
+70 fBodyAcc.std...Y
+71 fBodyAcc.std...Z
+72 fBodyAccJerk.std...X
+73 fBodyAccJerk.std...Y
+74 fBodyAccJerk.std...Z
+75 fBodyGyro.std...X
+76 fBodyGyro.std...Y
+77 fBodyGyro.std...Z
+78 fBodyAccMag.std..
+79 fBodyBodyAccJerkMag.std..
+80 fBodyBodyGyroMag.std..
+81 fBodyBodyGyroJerkMag.std..
